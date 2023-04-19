@@ -20,10 +20,10 @@ public class Event {
      * @return the new integer health value after restoring some health
      */
     public static int heal(int amount) {
-        if (Entities.health - amount <= 0) {
+        if (Entities.partyHealth - amount <= 0) {
             return 0;
         } else {
-            return Entities.health - amount;
+            return Entities.partyHealth - amount;
         }
     }
 
@@ -32,7 +32,7 @@ public class Event {
      * @return an incremented health integer based on damage taken
      */
     public static int takeDamage(int amount) {
-        return Entities.health += amount;
+        return Entities.partyHealth += amount;
     }
 
     /**
@@ -41,7 +41,7 @@ public class Event {
      */
     public static void fallIll(Entities entity){
         takeDamage(1);
-        entity.setCharacterHealth(new String[]{"Ill"});
+        entity.setCharacterHealth("Ill");
     }
 
 
@@ -51,7 +51,7 @@ public class Event {
      */
     public static void snakeBite(Entities entity){
         takeDamage(3);
-        entity.setCharacterHealth(new String[]{"Snake Bite"});
+        entity.setCharacterHealth("Snake Bite");
     }
 
 
@@ -60,7 +60,7 @@ public class Event {
      * @param entity the entity being affected
      */
     public static void recover(Entities entity){
-        entity.setCharacterHealth(new String[]{"Healthy"});
+        entity.setCharacterHealth("Healthy");
     }
 
 

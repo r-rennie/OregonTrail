@@ -12,12 +12,14 @@ public class Entities {
 
     public static int healthModifier = 0;
     public static String[] entityName = new String[6];
-    public static int health = 0;
+    public static String[] memberIllness;
+    public static String[] memberInjury;
+    public static int partyHealth = 0;
     public static int foodRations = 3;
     public static int pace = 18;
     public int index = 0;
     public static String healthStatus;
-    public static String[] characterHealth = new String[6];
+
     public static String paceWord;
     public static int poundsFoodConsumed = 0;
 
@@ -29,12 +31,12 @@ public class Entities {
     public Entities(int role, String nameIn) {
         if (role == 0) {
             this.entityName[0] = "Hattie";
-            this.characterHealth[0] = "Healthy";
         } else {
             this.entityName[role] = nameIn;
             index = role;
-            this.characterHealth[index] = "Healthy";
         }
+        memberIllness[role] = "Healthy";
+        memberInjury[role] = "Healthy";
     }
     /*
     Setting the original family member names; the 'role' can be the associated number for each family member/the
@@ -45,21 +47,20 @@ public class Entities {
      * sets health of the family; health starts at 0 and climbs given circumstances of poor health maintenance
      * @param damage the damage being added to the current health given a circumstance
      */
-    public static void setHealth(int damage) {
-        health = health + damage;
+    public static void setHealth(int damage) { partyHealth = partyHealth + damage;
     }
 
     /**
      * @return the referenced health status (as a string) of the family given their integer health value
      */
     public static String getHealth() {
-        if(health <= 34) {
+        if(partyHealth <= 34) {
             healthStatus = "good health";
         }
-        else if(health <= 65) {
+        else if(partyHealth <= 65) {
             healthStatus = "fair health";
         }
-        else if(health <= 104) {
+        else if(partyHealth <= 104) {
             healthStatus = "poor health";
         }
         else {
@@ -69,6 +70,25 @@ public class Entities {
         return healthStatus;
     }
 
+    public static String getMemberInjury(int role) {
+        return memberInjury[role];
+    }
+
+    public static void setMemberInjury(int role, String condition) {
+        memberInjury[role] = condition;
+    }
+
+    public static String getMemberIllness(int role) {
+        return memberIllness[role];
+    }
+
+    public static void setMemberIllness(int role, String condition) {
+        memberIllness[role] = condition;
+    }
+
+    public static int getHealthInt() {
+        return partyHealth;
+    }
 
     /**
      *   "Filling" is 3 pounds of food per day per person, "meager" is 2 pounds, and "bare bones" is 1 pound
@@ -171,11 +191,11 @@ public class Entities {
     }
 
     public static String getCharacterHealth(int character) {
-        return characterHealth[character];
+        return healthStatus;
     }
 
-    public void setCharacterHealth(String[] characterHealth) {
-        this.characterHealth = characterHealth;
+    public void setCharacterHealth(String characterHealth) {
+        healthStatus = characterHealth;
     }
 
 
