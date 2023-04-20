@@ -12,8 +12,8 @@ public class Entities {
 
     public static int healthModifier = 0;
     public static String[] entityName = new String[6];
-    public static String[] memberIllness;
-    public static String[] memberInjury;
+    public static String[] memberIllness = new String[6];
+    public static String[] memberInjury = new String[6];
     public static int partyHealth = 0;
     public static int foodRations = 3;
     public static int pace = 18;
