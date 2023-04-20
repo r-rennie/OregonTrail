@@ -34,30 +34,30 @@ public class River extends Location {
 
     //Methods
 
-    /*
+
     //Floating Wagon Across
-    boolean riverWagonCrossSucceed(int Wagon.getWagonStatus(), int entity.getPlayerHealth(), int river){
+    boolean riverWagonCrossSucceed(int wheelCondition, int axelCondition, int tongueCondition){
         //If health is below certain amount (must be very low) fail
         // If wagon health is low (medium) fail
         //Some rivers are worse than others
-        return true;
-    }
-    //Swimming/Walking Across (https://www.loupcity.com/when-to-ford-rivers-in-oregon-trail/)
-    boolean riverSwimAcrossSucceed(int entity.getPlayerHealth(), int depth){
-        if (entity.getPlayerHealth() < 5 || depth > 4;)
-        {
+        if (wheelCondition < 3) {
+            return true;
+        }
+        else {
             return false;
         }
-        return true;
+    }
+    //Swimming/Walking Across (https://www.loupcity.com/when-to-ford-rivers-in-oregon-trail/)
+    boolean riverSwimAcrossSucceed(int health, int depth){
+        return health >= 5 && depth <= 4;
     }
 
     //Ferry (before this, in main, check if player has a balance to do so)
-    boolean payForFerry(inventory.getBalance()){
-        if (inventory.getBalance() < FERRY_PRICE )
+    boolean payForFerry(int balance){
+        if (balance < FERRY_PRICE )
             {
                 return false;
             }
         return true;
     }
-*/
 }
