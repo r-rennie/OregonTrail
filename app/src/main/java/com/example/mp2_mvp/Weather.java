@@ -9,11 +9,12 @@ package com.example.mp2_mvp;
 
 public class Weather {
 
-
-    private int temperature = 70;
+    //Variables
+    private int temperature;
 
     //Constructor
-    public Weather() {
+    public Weather(int temp) {
+        this.temperature = temp;
     }
 
     //Getters & Setters
