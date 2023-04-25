@@ -157,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
                         //what decreases health: food, pace, events
                         System.out.println("Ration damage: " + Entities.getDamageFromRations());
                         System.out.println("Pace damage: " + Entities.getDamageFromPace());
-                        Entities.healthModifier = Entities.getDamageFromRations() + Entities.getDamageFromPace();
+                        //System.out.println("Event damage: " + Entities.getDamageFromEvent());
+                        Entities.healthModifier = Entities.getDamageFromRations() + Entities.getDamageFromPace() + /*Entities.getDamageFromEvent()*/;
                         Entities.setHealth(Entities.healthModifier);
 
                         dateBox.setText(Date.printDate(currentDate) + " - Days Elapsed: " + Date.getDaysElapsed() + " - Miles Traveled: " + Date.getMilesElapsed());
