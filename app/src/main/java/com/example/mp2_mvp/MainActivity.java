@@ -16,12 +16,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Arrays;
-//HELLO LILA JFHIsahil;oBNOLK:iaosbnfnsaofsnafsinofainos YIPEEE
+
 public class MainActivity extends AppCompatActivity {
 
-    //hi
-
-    //ierurgpeqiugwepiugv
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,12 +137,12 @@ public class MainActivity extends AppCompatActivity {
 
                 dateBox.setText(Date.printDate(currentDate) + " - Days Elapsed: " + Date.getDaysElapsed() + " - Miles Traveled: " + Date.getMilesElapsed());
                 locationBox.setText(Location.findLocation(0, locations[0]));
-                hattieStats.setText(Entities.entityName[0] + ": " + Entities.getCharacterHealth(0));
-                p2Stats.setText(Entities.entityName[2] + ": " + Entities.getCharacterHealth(2));
-                p3Stats.setText(Entities.entityName[3] + ": " + Entities.getCharacterHealth(3));
-                p4Stats.setText(Entities.entityName[4] + ": " + Entities.getCharacterHealth(4));
-                p5Stats.setText(Entities.entityName[5] + ": " + Entities.getCharacterHealth(5));
-                healthBox.setText("Health: " + Entities.getHealth());
+                hattieStats.setText(Entities.entityName[0] + " Health: " + Entities.getMemberIllness(0) + "; Injury: " + Entities.getMemberInjury(0));
+                p2Stats.setText(Entities.entityName[2] + " Health: " + Entities.getMemberIllness(2) + "; Injury: " + Entities.getMemberInjury(2));
+                p3Stats.setText(Entities.entityName[3] + " Health: " + Entities.getMemberIllness(3) + "; Injury: " + Entities.getMemberInjury(3));
+                p4Stats.setText(Entities.entityName[4] + " Health: " + Entities.getMemberIllness(4) + "; Injury: " + Entities.getMemberInjury(4));
+                p5Stats.setText(Entities.entityName[5] + " Health: " + Entities.getMemberIllness(5) + "; Injury: " + Entities.getMemberInjury(5));
+                healthBox.setText("Overall Health: " + Entities.getHealth());
                 foodBox.setText("Rations: " + Entities.getFoodRations() + "; Food Remaining: "+ Inventory.getItemCount(2));
 
 
@@ -162,11 +159,11 @@ public class MainActivity extends AppCompatActivity {
 
                         dateBox.setText(Date.printDate(currentDate) + " - Days Elapsed: " + Date.getDaysElapsed() + " - Miles Traveled: " + Date.getMilesElapsed());
                         locationBox.setText(Location.location(Date.getMilesElapsed(), Entities.pace));
-                        hattieStats.setText(Entities.entityName[0] + ": " + Entities.getCharacterHealth(0));
-                        p2Stats.setText(Entities.entityName[2] + ": " + Entities.getCharacterHealth(2));
-                        p3Stats.setText(Entities.entityName[3] + ": " + Entities.getCharacterHealth(3));
-                        p4Stats.setText(Entities.entityName[4] + ": " + Entities.getCharacterHealth(4));
-                        p5Stats.setText(Entities.entityName[5] + ": " + Entities.getCharacterHealth(5));
+                        hattieStats.setText(Entities.entityName[0] + "Health: " + Entities.getMemberIllness(0) + "; Injury: " + Entities.getMemberInjury(0));
+                        p2Stats.setText(Entities.entityName[2] + ": Health: " + Entities.getMemberIllness(2) + "; Injury: " + Entities.getMemberInjury(2));
+                        p3Stats.setText(Entities.entityName[3] + ": Health: " + Entities.getMemberIllness(3) + "; Injury: " + Entities.getMemberInjury(3));
+                        p4Stats.setText(Entities.entityName[4] + ": Health: " + Entities.getMemberIllness(4) + "; Injury: " + Entities.getMemberInjury(4));
+                        p5Stats.setText(Entities.entityName[5] + ": Health: " + Entities.getMemberIllness(5) + "; Injury: " + Entities.getMemberInjury(5));
                         healthBox.setText("Health: " + Entities.getHealth());
                         Inventory.removeSupplies(2, Entities.foodEaten(Entities.pace));
                         foodBox.setText("Rations: " + Entities.getFoodRations() + "; Food Remaining: " + Inventory.getItemCount(2));

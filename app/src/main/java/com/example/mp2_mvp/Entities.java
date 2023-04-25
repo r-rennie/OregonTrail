@@ -36,7 +36,7 @@ public class Entities {
             index = role;
         }
         memberIllness[role] = "Healthy";
-        memberInjury[role] = "Healthy";
+        memberInjury[role] = "None";
     }
     /*
     Setting the original family member names; the 'role' can be the associated number for each family member/the
