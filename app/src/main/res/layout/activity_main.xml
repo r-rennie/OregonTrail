@@ -99,7 +99,7 @@
         android:id="@+id/startButton"
         android:layout_width="252dp"
         android:layout_height="272dp"
-        android:text="@string/start_game"
+        android:text="start game"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/grouphealth"
+        android:text="groupHealth"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -252,6 +252,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodBox" />
 
-    />
+    <ImageView
+        android:id="@+id/title_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="731dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/oregontrailtitle"
+        android:background="@drawable/oregontrailtitle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
