@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         final Button nameEnter = findViewById(R.id.enterButton2);
         final Button startButton = findViewById(R.id.startButton);
         final Button nextDayButton = findViewById(R.id.nextDay);
+        final Button inventoryButton = findViewById(R.id.inventoryButton);
         final TextView dateBox = findViewById(R.id.date);
         final TextView locationBox = findViewById(R.id.location);
         final TextView hattieStats = findViewById(R.id.hattieStats);
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         //===================================================START GAME========================================================
 
         // Introduction to the game
+        inventoryButton.setVisibility(View.GONE);
         nameInput.setVisibility(View.GONE);
         userInput.setHint("Type 1 or 2");
         title_card.setVisibility(View.VISIBLE);
@@ -113,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
                 System.out.println(Arrays.toString(entities));
                 startButton.setVisibility(View.GONE);
+                inventoryButton.setVisibility(View.VISIBLE);
                 nextDayButton.setVisibility(View.VISIBLE);
                 dateBox.setVisibility(View.VISIBLE);
                 locationBox.setVisibility(View.VISIBLE);
@@ -151,7 +154,24 @@ public class MainActivity extends AppCompatActivity {
                 healthBox.setText("Health: " + Entities.getHealth());
                 foodBox.setText("Rations: " + Entities.getFoodRations() + "; Food Remaining: "+ Inventory.getItemCount(2));
 
-
+                inventoryButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        nextDayButton.setVisibility(View.GONE);
+                        inventoryButton.setVisibility(View.GONE);
+                        dateBox.setVisibility(View.GONE);
+                        locationBox.setVisibility(View.GONE);
+                        hattieStats.setVisibility(View.GONE);
+                        p2Stats.setVisibility(View.GONE);
+                        p3Stats.setVisibility(View.GONE);
+                        p4Stats.setVisibility(View.GONE);
+                        p5Stats.setVisibility(View.GONE);
+                        healthBox.setVisibility(View.GONE);
+                        foodBox.setVisibility(View.GONE);
+                        randomEvent.setVisibility(View.GONE);
+                        hattie_img.setVisibility(View.GONE);
+                    }
+                });
                 nextDayButton.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
 
@@ -195,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
                         // Ends the game once the final location is reached
                         if (Location.location(Date.getMilesElapsed(), Entities.pace).equals("Ash Hollow, Nebraska")) {
                             nextDayButton.setVisibility(View.GONE);
+                            inventoryButton.setVisibility(View.GONE);
                             dateBox.setVisibility(View.GONE);
                             locationBox.setVisibility(View.GONE);
                             hattieStats.setVisibility(View.GONE);
