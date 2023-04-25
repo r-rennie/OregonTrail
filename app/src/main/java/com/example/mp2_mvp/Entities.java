@@ -8,6 +8,8 @@ Description: Creates entities (Hattie, NPCs, (soon to come oxen)) and monitors h
 
 package com.example.mp2_mvp;
 
+
+
 public class Entities {
 
     public static int healthModifier = 0;
@@ -196,6 +198,12 @@ public class Entities {
 
     public void setCharacterHealth(String characterHealth) {
         healthStatus = characterHealth;
+    }
+
+    public static int getDamageFromEvent() {
+        //if (memberIllness == )
+
+        return 0;
     }
 
 
