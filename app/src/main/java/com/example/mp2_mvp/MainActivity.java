@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         final TextView foodBox = findViewById(R.id.foodBox);
         final TextView randomEvent = findViewById(R.id.randomEventText);
         final ImageView hattie_img = findViewById(R.id.hattieImg);
-        final ImageView title_card = findViewById(R.id.title_card);
 
         final Entities[] entities = new Entities[5];
 
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         // Introduction to the game
         nameInput.setVisibility(View.GONE);
         userInput.setHint("Type 1 or 2");
-        title_card.setVisibility(View.VISIBLE);
         text.setText("Welcome to the Oregon Trail.\nYou may:\n   1. Travel the trail\n   2. End\nWhat is your choice?");
 
         startEnter.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
                     userInput.setVisibility(View.GONE);
                     nameInput.setVisibility(View.VISIBLE);
-                    title_card.setVisibility(View.GONE);
                     nameInput.setHint("Enter names here - press ENTER in between");
                     startEnter.setVisibility(View.GONE);
                     nameEnter.setVisibility(View.VISIBLE);
@@ -221,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Creating the item array
-        Item[] items = new Item[22];
+        Item[] items = new Item[23];
 
         // Creating the ID for each item in the game
         items[0] = new Item(0,"Coffee",0.10, 10);
@@ -246,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
         items[19] = new Item(19,"Frying Pan",1.5, 10);
         items[20] = new Item(20,"Pan",0.25, 10);
         items[21] = new Item(21,"Enchantment Table",400, 10);
+        items[22] = new Item(22, "Ol' reliable Fishing Rod", 10, 1);
 
 
 
