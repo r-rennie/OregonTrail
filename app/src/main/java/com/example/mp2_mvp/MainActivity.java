@@ -19,10 +19,6 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    //hi
-
-    //ierurgpeqiugwepiugv
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         final Button nameEnter = findViewById(R.id.enterButton2);
         final Button startButton = findViewById(R.id.startButton);
         final Button nextDayButton = findViewById(R.id.nextDay);
-        final Button inventoryButton = findViewById(R.id.inventoryButton);
         final TextView dateBox = findViewById(R.id.date);
         final TextView locationBox = findViewById(R.id.location);
         final TextView hattieStats = findViewById(R.id.hattieStats);
@@ -48,15 +43,16 @@ public class MainActivity extends AppCompatActivity {
         final TextView foodBox = findViewById(R.id.foodBox);
         final TextView randomEvent = findViewById(R.id.randomEventText);
         final ImageView hattie_img = findViewById(R.id.hattieImg);
+        final ImageView title_card = findViewById(R.id.title_card);
 
         final Entities[] entities = new Entities[5];
 
         //===================================================START GAME========================================================
 
         // Introduction to the game
-        inventoryButton.setVisibility(View.GONE);
         nameInput.setVisibility(View.GONE);
         userInput.setHint("Type 1 or 2");
+        title_card.setVisibility(View.VISIBLE);
         text.setText("Welcome to the Oregon Trail.\nYou may:\n   1. Travel the trail\n   2. End\nWhat is your choice?");
 
         startEnter.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
                     userInput.setVisibility(View.GONE);
                     nameInput.setVisibility(View.VISIBLE);
+                    title_card.setVisibility(View.GONE);
                     nameInput.setHint("Enter names here - press ENTER in between");
                     startEnter.setVisibility(View.GONE);
                     nameEnter.setVisibility(View.VISIBLE);
@@ -112,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
                 System.out.println(Arrays.toString(entities));
                 startButton.setVisibility(View.GONE);
-                inventoryButton.setVisibility(View.VISIBLE);
                 nextDayButton.setVisibility(View.VISIBLE);
                 dateBox.setVisibility(View.VISIBLE);
                 locationBox.setVisibility(View.VISIBLE);
@@ -151,24 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 healthBox.setText("Health: " + Entities.getHealth());
                 foodBox.setText("Rations: " + Entities.getFoodRations() + "; Food Remaining: "+ Inventory.getItemCount(2));
 
-                inventoryButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        nextDayButton.setVisibility(View.GONE);
-                        inventoryButton.setVisibility(View.GONE);
-                        dateBox.setVisibility(View.GONE);
-                        locationBox.setVisibility(View.GONE);
-                        hattieStats.setVisibility(View.GONE);
-                        p2Stats.setVisibility(View.GONE);
-                        p3Stats.setVisibility(View.GONE);
-                        p4Stats.setVisibility(View.GONE);
-                        p5Stats.setVisibility(View.GONE);
-                        healthBox.setVisibility(View.GONE);
-                        foodBox.setVisibility(View.GONE);
-                        randomEvent.setVisibility(View.GONE);
-                        hattie_img.setVisibility(View.GONE);
-                    }
-                });
+
                 nextDayButton.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
 
@@ -212,7 +191,6 @@ public class MainActivity extends AppCompatActivity {
                         // Ends the game once the final location is reached
                         if (Location.location(Date.getMilesElapsed(), Entities.pace).equals("Ash Hollow, Nebraska")) {
                             nextDayButton.setVisibility(View.GONE);
-                            inventoryButton.setVisibility(View.GONE);
                             dateBox.setVisibility(View.GONE);
                             locationBox.setVisibility(View.GONE);
                             hattieStats.setVisibility(View.GONE);
@@ -239,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Creating the item array
-        Item[] items = new Item[23];
+        Item[] items = new Item[22];
 
         // Creating the ID for each item in the game
         items[0] = new Item(0,"Coffee",0.10, 10);
@@ -264,7 +242,6 @@ public class MainActivity extends AppCompatActivity {
         items[19] = new Item(19,"Frying Pan",1.5, 10);
         items[20] = new Item(20,"Pan",0.25, 10);
         items[21] = new Item(21,"Enchantment Table",400, 10);
-        items[22] = new Item(22, "Ol' reliable Fishing Rod", 10, 1);
 
 
 

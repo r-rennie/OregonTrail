@@ -11,8 +11,26 @@ import java.util.ArrayList;
 
 public class Event {
 
-    public static String eventID;
-    public static String eventName;
+    //redo: 100 options, 30% chance negative event (illness, wagon break, oxen, etc), 20% chance positive
+    //event (find food, etc), 50% chance nothing happens [PERCENTAGES UP IN THE AIR STILL]
+
+    private static String eventName;
+    private static int effectOnHealth;
+    private static String flavorText;
+    private static int effectOnFood;
+
+    public Event(String eventName, int effectOnHealth, String flavorText) {
+        this.eventName = eventName;
+        this.effectOnHealth = effectOnHealth;
+        this.flavorText = flavorText;
+    }
+    public Event(int effectOnFood, String eventName, String flavorText){
+        this.effectOnFood = effectOnFood;
+        this.eventName = eventName;
+        this.flavorText = flavorText;
+    }
+
+
 
     /**
      *
@@ -63,12 +81,47 @@ public class Event {
         entity.setCharacterHealth("Healthy");
     }
 
+    /**
+     *
+     * @param event
+     */
+    public static void setEvent(Event event){
+
+    }
 
     /**
-     * @return the random event integer corresponding to a random event
+     * @return Either a random event, positive or negative, or nothing
      */
-    public static int getEvent() {
-        return (int)(Math.random() * 10) + 1;
+    public static Event chooseRandomEvent() {
+
+        int random = (int)(Math.random() * 100) + 1;
+
+        Event[] negativeEvents = new Event[4];
+        negativeEvents[0] = new Event("Bad water", 20, "Bad water");
+        negativeEvents[1] = new Event("Very little water", 10, "Very little water");
+        negativeEvents[2] = new Event("Diseased party member", 20, "Diseased party member");
+        negativeEvents[3] = new Event("Rough trail", 10, "Rough trail");
+
+        Event[] positiveEvents = new Event[4];
+        positiveEvents[0] = new Event(20, "Find food", "Find food");
+        positiveEvents[1] = new Event("Recover", 0, "Recover");
+
+        if (random > 0 && random <= 30){
+            int chooseNegative = (int)(Math.random() * 4);
+            return negativeEvents[chooseNegative];
+        } else if (random > 30 && random <= 50) {
+            int choosePositive = (int)(Math.random() * 4);
+
+            if (choosePositive == 1) {
+
+            }
+
+            return positiveEvents[choosePositive];
+        } else {
+           return null;
+        }
     }
+
+
 
 }
