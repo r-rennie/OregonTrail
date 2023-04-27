@@ -50,19 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         //===================================================START GAME========================================================
 
-        // Introduction to the game
-        nameInput.setVisibility(View.GONE);
-        userInput.setHint("Type 1 or 2");
-        //title_card.setVisibility(View.VISIBLE);
-        text.setText("Welcome to the Oregon Trail.\nYou may:\n   1. Travel the trail\n   2. End\nWhat is your choice?");
-
         startEnter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-                String in = userInput.getText().toString();
-
-                // Starts the game if the user enters '1'
-                if (in.equals("1")) {
 
                     userInput.setVisibility(View.GONE);
                     nameInput.setVisibility(View.VISIBLE);
@@ -90,14 +79,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     });
-
-                    // If the user doesn't enter 1, game ends
-                    // Will change to have different GUI options after MVP
-                } else {
-                    text.setText("okay");
-                    userInput.setVisibility(View.GONE);
-                    startEnter.setVisibility(View.GONE);
-                }
             }
         });
 
