@@ -28,10 +28,15 @@ public class MainActivity extends AppCompatActivity {
         final TextView text = findViewById(R.id.textBox);
         final EditText userInput = findViewById(R.id.editTextInput);
         final EditText nameInput = findViewById(R.id.editTextNameInput);
+        final EditText removeInventoryEdit = findViewById(R.id.removeInventoryEdit);
+        final EditText addInventoryEdit = findViewById(R.id.addInventoryEdit);
         final Button startEnter = findViewById(R.id.enterButton1);
         final Button nameEnter = findViewById(R.id.enterButton2);
         final Button startButton = findViewById(R.id.startButton);
         final Button nextDayButton = findViewById(R.id.nextDay);
+        final Button inventoryButton = findViewById(R.id.inventoryButton);
+        final Button addButton = findViewById(R.id.addButton);
+        final Button removeButton = findViewById(R.id.removeButton);
         final TextView dateBox = findViewById(R.id.date);
         final TextView locationBox = findViewById(R.id.location);
         final TextView hattieStats = findViewById(R.id.hattieStats);
@@ -119,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 foodBox.setVisibility(View.VISIBLE);
                 hattie_img.setVisibility(View.VISIBLE);
                 randomEvent.setVisibility(View.INVISIBLE);
-
+                inventoryButton.setVisibility(View.VISIBLE);
                 // Sets the generic game info
                 Date currentDate = new Date(5, 1, 1850);
                 Inventory.addSupplies(2, 2000);
@@ -145,7 +150,30 @@ public class MainActivity extends AppCompatActivity {
                 healthBox.setText("Health: " + Entities.getHealth());
                 foodBox.setText("Rations: " + Entities.getFoodRations() + "; Food Remaining: " + Inventory.getItemCount(2));
 
+                inventoryButton.setOnClickListener(new View.OnClickListener(){
+                    public void onClick(View view){
+                        nextDayButton.setVisibility(View.GONE);
+                        dateBox.setVisibility(View.GONE);
+                        locationBox.setVisibility(View.GONE);
+                        hattieStats.setVisibility(View.GONE);
+                        p2Stats.setVisibility(View.GONE);
+                        p3Stats.setVisibility(View.GONE);
+                        p4Stats.setVisibility(View.GONE);
+                        p5Stats.setVisibility(View.GONE);
+                        healthBox.setVisibility(View.GONE);
+                        foodBox.setVisibility(View.GONE);
+                        randomEvent.setVisibility(View.GONE);
+                        hattie_img.setVisibility(View.GONE);
+                        text.setVisibility(View.GONE);
+                        randomEvent.setVisibility(View.GONE);
+                        inventoryButton.setVisibility(View.GONE);
+                        removeButton.setVisibility(View.VISIBLE);
+                        removeInventoryEdit.setVisibility(View.VISIBLE);
+                        addButton.setVisibility(View.VISIBLE);
+                        addInventoryEdit.setVisibility(View.VISIBLE);
 
+                    }
+                });
                 nextDayButton.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
 
