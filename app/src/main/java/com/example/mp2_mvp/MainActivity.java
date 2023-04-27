@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView foodBox = findViewById(R.id.foodBox);
         final TextView randomEvent = findViewById(R.id.randomEventText);
         final ImageView hattie_img = findViewById(R.id.hattieImg);
+        final TextView climateStats = findViewById(R.id.climateStats);
 
         final Entities[] entities = new Entities[5];
 
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 nextDayButton.setVisibility(View.VISIBLE);
                 dateBox.setVisibility(View.VISIBLE);
                 locationBox.setVisibility(View.VISIBLE);
+                climateStats.setVisibility(View.VISIBLE);
                 hattieStats.setVisibility(View.VISIBLE);
                 p2Stats.setVisibility(View.VISIBLE);
                 p3Stats.setVisibility(View.VISIBLE);
@@ -137,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
                 dateBox.setText(Date.printDate(currentDate) + " - Days Elapsed: " + Date.getDaysElapsed() + " - Miles Traveled: " + Date.getMilesElapsed());
                 locationBox.setText(Location.findLocation(0, locations[0]));
+                climateStats.setText("Temperature: " + Weather.getTemperature());
                 hattieStats.setText(Entities.entityName[0] + " Health: " + Entities.getMemberIllness(0) + "; Injury: " + Entities.getMemberInjury(0));
                 p2Stats.setText(Entities.entityName[2] + " Health: " + Entities.getMemberIllness(2) + "; Injury: " + Entities.getMemberInjury(2));
                 p3Stats.setText(Entities.entityName[3] + " Health: " + Entities.getMemberIllness(3) + "; Injury: " + Entities.getMemberInjury(3));
@@ -154,25 +157,26 @@ public class MainActivity extends AppCompatActivity {
                         //what decreases health: food, pace, events
                         System.out.println("Ration damage: " + Entities.getDamageFromRations());
                         System.out.println("Pace damage: " + Entities.getDamageFromPace());
-<<<<<<<<< Temporary merge branch 1
+
                         //System.out.println("Event damage: " + Entities.getDamageFromEvent());
                         Entities.healthModifier = Entities.getDamageFromRations() + Entities.getDamageFromPace() /*+ Entities.getDamageFromEvent()*/;
-=========
+
                         Entities.healthModifier = Entities.getDamageFromRations() + Entities.getDamageFromPace();
->>>>>>>>> Temporary merge branch 2
+
                         Entities.setHealth(Entities.healthModifier);
 
-                        dateBox.setText(Date.printDate(currentDate) + " - Days Elapsed: " + Date.getDaysElapsed() + " - Miles Traveled: " + Date.getMilesElapsed());
+                        dateBox.setText(Date.printDate(currentDate) + " - Days Elapsed: " + Date.getDaysElapsed() + " - Miles Traveled: " + Date.getMilesElapsed() + " - Miles per Day: " + Entities.getPace());
                         locationBox.setText(Location.location(Date.getMilesElapsed(), Entities.pace));
                         hattieStats.setText(Entities.entityName[0] + "Health: " + Entities.getMemberIllness(0) + "; Injury: " + Entities.getMemberInjury(0));
-                        p2Stats.setText(Entities.entityName[2] + ": Health: " + Entities.getMemberIllness(2) + "; Injury: " + Entities.getMemberInjury(2));
-                        p3Stats.setText(Entities.entityName[3] + ": Health: " + Entities.getMemberIllness(3) + "; Injury: " + Entities.getMemberInjury(3));
-                        p4Stats.setText(Entities.entityName[4] + ": Health: " + Entities.getMemberIllness(4) + "; Injury: " + Entities.getMemberInjury(4));
-                        p5Stats.setText(Entities.entityName[5] + ": Health: " + Entities.getMemberIllness(5) + "; Injury: " + Entities.getMemberInjury(5));
+                        p2Stats.setText(Entities.entityName[2] + " Health: " + Entities.getMemberIllness(2) + "; Injury: " + Entities.getMemberInjury(2));
+                        p3Stats.setText(Entities.entityName[3] + " Health: " + Entities.getMemberIllness(3) + "; Injury: " + Entities.getMemberInjury(3));
+                        p4Stats.setText(Entities.entityName[4] + " Health: " + Entities.getMemberIllness(4) + "; Injury: " + Entities.getMemberInjury(4));
+                        p5Stats.setText(Entities.entityName[5] + " Health: " + Entities.getMemberIllness(5) + "; Injury: " + Entities.getMemberInjury(5));
                         healthBox.setText("Health: " + Entities.getHealth());
                         Inventory.removeSupplies(2, Entities.foodEaten(Entities.pace));
                         foodBox.setText("Rations: " + Entities.getFoodRations() + "; Food Remaining: " + Inventory.getItemCount(2));
 
+                        /*
                         // Random event generator
                         int chosenEvent = Event.getEvent();
                         int affectedEntity = (int)((Math.random() * 6) + 1);
@@ -189,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                             randomEvent.setText("Ouch! Snake Bite");
                             randomEvent.setVisibility(View.VISIBLE);
                         }
-
+                        */
 
                         // Ends the game once the final location is reached
                         if (Location.location(Date.getMilesElapsed(), Entities.pace).equals("Ash Hollow, Nebraska")) {
