@@ -49,7 +49,8 @@ public class Entities {
      * sets health of the family; health starts at 0 and climbs given circumstances of poor health maintenance
      * @param damage the damage being added to the current health given a circumstance
      */
-    public static void setHealth(int damage) { partyHealth = partyHealth + damage;
+    public static void setHealth(int damage) {
+        partyHealth = partyHealth + damage;
     }
 
     /**

@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         // Introduction to the game
         nameInput.setVisibility(View.GONE);
         userInput.setHint("Type 1 or 2");
+        //title_card.setVisibility(View.VISIBLE);
         text.setText("Welcome to the Oregon Trail.\nYou may:\n   1. Travel the trail\n   2. End\nWhat is your choice?");
 
         startEnter.setOnClickListener(new View.OnClickListener() {
@@ -177,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                         foodBox.setText("Rations: " + Entities.getFoodRations() + "; Food Remaining: " + Inventory.getItemCount(2));
 
                         /*
-                        // Random event generator
+                        // Random event generator [OBSOLETE]
                         int chosenEvent = Event.getEvent();
                         int affectedEntity = (int)((Math.random() * 6) + 1);
                         if (chosenEvent == 1 || chosenEvent == 2) {
