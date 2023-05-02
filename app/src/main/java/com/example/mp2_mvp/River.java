@@ -37,12 +37,23 @@ public class River extends Location {
 
     //Floating Wagon Across
     boolean riverWagonCrossSucceed(int wheelCondition, int axelCondition, int tongueCondition){
+
         //If health is below certain amount (must be very low) fail
         // If wagon health is low (medium) fail
         //Some rivers are worse than others
-        if (wheelCondition < 3) {
+        if (Entities.getHealthInt() < 120) {
             return true;
         }
+
+        if (wheelCondition > 50 && axelCondition > 50 && tongueCondition > 50) {
+            return true;
+        }
+
+        int randInt = (int) (Math.random() * 100);
+        if (randInt <= 10) {
+
+        }
+
         else {
             return false;
         }
