@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:screenOrientation="landscape"
     android:background="@drawable/oregontrailtitle"
+    android:screenOrientation="landscape"
     tools:context=".MainActivity">
 
     <TextView
@@ -263,13 +263,14 @@
         android:layout_width="150dp"
         android:layout_height="140dp"
         android:layout_marginEnd="128dp"
+        android:layout_marginBottom="3dp"
         android:contentDescription="Hattie Campbell image from the book in blue dresss"
         android:translationX="-760dp"
         android:translationY="550dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/hattie"
-        tools:layout_editor_absoluteY="387dp" />
+        app:srcCompat="@drawable/hattie" />
 
     <TextView
         android:id="@+id/randomEventText"
@@ -281,5 +282,67 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodBox" />
+
+    <EditText
+        android:id="@+id/removeInventoryEdit"
+        android:layout_width="255dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Remove"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/removeButton"
+        app:layout_constraintEnd_toStartOf="@+id/groupHealth"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/addInventoryEdit"
+        android:layout_width="238dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="38dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Add"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/groupHealth"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/removeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="80dp"
+        android:text="REMOVE"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/removeInventoryEdit"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="2dp"
+        android:text="add"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/addInventoryEdit"
+        app:layout_constraintTop_toBottomOf="@+id/addInventoryEdit"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/inventoryButton"
+        android:layout_width="179dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="WAGON"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
