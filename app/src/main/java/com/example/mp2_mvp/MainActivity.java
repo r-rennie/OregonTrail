@@ -53,32 +53,34 @@ public class MainActivity extends AppCompatActivity {
         startEnter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                    userInput.setVisibility(View.GONE);
-                    nameInput.setVisibility(View.VISIBLE);
-                    nameInput.setHint("Enter names here - press ENTER in between");
-                    startEnter.setVisibility(View.GONE);
-                    nameEnter.setVisibility(View.VISIBLE);
-                    text.setText("Your name is Hattie Campbell.\nWhat are the names of the other members in your party?\n     1. Hattie");
+                userInput.setVisibility(View.GONE);
+                nameInput.setVisibility(View.VISIBLE);
+                nameInput.setHint("Enter names here - press ENTER in between");
+                startEnter.setVisibility(View.GONE);
+                nameEnter.setVisibility(View.VISIBLE);
+                text.setText("Your name is Hattie Campbell." +
+                        "\nWhat are the names of the other members in your party?" +
+                        "\n     1. Hattie");
 
-                    entities[0] = new Entities(0, "Hattie");
+                entities[0] = new Entities(0, "Hattie");
 
-                    nameEnter.setOnClickListener(new View.OnClickListener() {
-                        int entityCount = 1;
-                        public void onClick(View v) {
-                            entityCount++;
-                            if (entityCount > 5){
-                                nameInput.setVisibility(View.GONE);
-                                nameEnter.setVisibility(View.GONE);
-                                text.setVisibility(View.GONE);
-                                startButton.setVisibility(View.VISIBLE);
-                                return;
-                            } else {
-                                String name = nameInput.getText().toString();
-                                entities[entityCount - 1] = new Entities(entityCount, name);
-                                text.setText(text.getText() + "\n     " + entityCount + ". " + name);
-                            }
+                nameEnter.setOnClickListener(new View.OnClickListener() {
+                    int entityCount = 1;
+                    public void onClick(View v) {
+                        entityCount++;
+                        if (entityCount > 5){
+                            nameInput.setVisibility(View.GONE);
+                            nameEnter.setVisibility(View.GONE);
+                            text.setVisibility(View.GONE);
+                            startButton.setVisibility(View.VISIBLE);
+                            return;
+                        } else {
+                            String name = nameInput.getText().toString();
+                            entities[entityCount - 1] = new Entities(entityCount, name);
+                            text.setText(text.getText() + "\n     " + entityCount + ". " + name);
                         }
-                    });
+                    }
+                });
             }
         });
 
@@ -130,23 +132,27 @@ public class MainActivity extends AppCompatActivity {
                 healthBox.setText("Overall Health: " + Entities.getHealth());
                 foodBox.setText("Rations: " + Entities.getFoodRations() + "; Food Remaining: "+ Inventory.getItemCount(2));
 
-
+                //===================================================================================================
+                //THIS BUTTON INCREMENTS THE DAYS AND UPDATES STATS. IMPORTANT BUTTON. <<<THE>>> BUTTON, EVEN.
+                //===================================================================================================
                 nextDayButton.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
 
                         Date.nextDay(currentDate);
                         randomEvent.setVisibility(View.INVISIBLE);
-                        //what decreases health: food, pace, events
+
+                        //HEALTH UPDATES
+                        // what decreases health: food, pace, events
                         System.out.println("Ration damage: " + Entities.getDamageFromRations());
                         System.out.println("Pace damage: " + Entities.getDamageFromPace());
-
                         //System.out.println("Event damage: " + Entities.getDamageFromEvent());
-                        Entities.healthModifier = Entities.getDamageFromRations() + Entities.getDamageFromPace() /*+ Entities.getDamageFromEvent()*/;
+                        System.out.println("Daily health regen: " + Entities.dailyHealthRegen());
 
-                        Entities.healthModifier = Entities.getDamageFromRations() + Entities.getDamageFromPace();
+                        Entities.healthModifier = (int) (Entities.getDamageFromRations() + Entities.getDamageFromPace() /*+ Entities.getDamageFromEvent()*/);
 
                         Entities.setHealth(Entities.healthModifier);
 
+                        //TEXTBOX UPDATES
                         dateBox.setText(Date.printDate(currentDate) + " - Days Elapsed: " + Date.getDaysElapsed() + " - Miles Traveled: " + Date.getMilesElapsed() + " - Miles per Day: " + Entities.getPace());
                         locationBox.setText(Location.location(Date.getMilesElapsed(), Entities.pace));
                         hattieStats.setText(Entities.entityName[0] + "Health: " + Entities.getMemberIllness(0) + "; Injury: " + Entities.getMemberInjury(0));
@@ -158,8 +164,7 @@ public class MainActivity extends AppCompatActivity {
                         Inventory.removeSupplies(2, Entities.foodEaten(Entities.pace));
                         foodBox.setText("Rations: " + Entities.getFoodRations() + "; Food Remaining: " + Inventory.getItemCount(2));
 
-                        /*
-                        // Random event generator [OBSOLETE]
+                        /* // Random event generator [OBSOLETE]
                         int chosenEvent = Event.getEvent();
                         int affectedEntity = (int)((Math.random() * 6) + 1);
                         if (chosenEvent == 1 || chosenEvent == 2) {
@@ -174,8 +179,7 @@ public class MainActivity extends AppCompatActivity {
                            // Event.snakeBite(entities[affectedEntity]);
                             randomEvent.setText("Ouch! Snake Bite");
                             randomEvent.setVisibility(View.VISIBLE);
-                        }
-                        */
+                        } */
 
                         // Ends the game once the final location is reached
                         if (Location.location(Date.getMilesElapsed(), Entities.pace).equals("Ash Hollow, Nebraska")) {

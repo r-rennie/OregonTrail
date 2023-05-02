@@ -77,45 +77,41 @@ public class Event {
      * resets the health status to "Healthy" on random event
      * @param entity the entity being affected
      */
-    public static void recover(Entities entity){
+    public static void recoverIllness(Entities entity){
         entity.setCharacterHealth("Healthy");
     }
 
-    /**
-     *
-     * @param event
-     */
-    public static void setEvent(Event event){
-
+    public static void recoverInjury(Entities entity) {
+        entity.setMemberInjury(entity.getRole(), "None");
     }
 
     /**
      * @return Either a random event, positive or negative, or nothing
+     * Note: takes the place of setEvent
      */
     public static Event chooseRandomEvent() {
 
         int random = (int)(Math.random() * 100) + 1;
 
-        Event[] negativeEvents = new Event[4];
+        //so you only need to change the array size in one place when adding to the event arrays
+        int posArraySize = 2;
+        int negArraySize = 4;
+
+        Event[] negativeEvents = new Event[negArraySize];
         negativeEvents[0] = new Event("Bad water", 20, "Bad water");
         negativeEvents[1] = new Event("Very little water", 10, "Very little water");
         negativeEvents[2] = new Event("Diseased party member", 20, "Diseased party member");
         negativeEvents[3] = new Event("Rough trail", 10, "Rough trail");
 
-        Event[] positiveEvents = new Event[4];
+        Event[] positiveEvents = new Event[posArraySize];
         positiveEvents[0] = new Event(20, "Find food", "Find food");
         positiveEvents[1] = new Event("Recover", 0, "Recover");
 
         if (random > 0 && random <= 30){
-            int chooseNegative = (int)(Math.random() * 4);
+            int chooseNegative = (int)(Math.random() * negArraySize);
             return negativeEvents[chooseNegative];
         } else if (random > 30 && random <= 50) {
-            int choosePositive = (int)(Math.random() * 4);
-
-            if (choosePositive == 1) {
-
-            }
-
+            int choosePositive = (int)(Math.random() * posArraySize);
             return positiveEvents[choosePositive];
         } else {
            return null;

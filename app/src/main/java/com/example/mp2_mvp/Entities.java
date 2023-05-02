@@ -24,6 +24,16 @@ public class Entities {
 
     public static String paceWord;
     public static int poundsFoodConsumed = 0;
+    private int role = 100;
+    private static int deathHealth = 140;
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
 
     /**
      * Constructor of each of the family members at the beginning of the game
@@ -31,6 +41,7 @@ public class Entities {
      * @param nameIn the inputted names of other family members as given by the player
      */
     public Entities(int role, String nameIn) {
+        this.role = role;
         if (role == 0) {
             this.entityName[0] = "Hattie";
         } else {
@@ -183,12 +194,6 @@ public class Entities {
         }
     }
 
-    /*public String getName(int index) {
-        return
-    }
-
-     */
-
     public static String getHealthStatus() {
         return healthStatus;
     }
@@ -202,9 +207,27 @@ public class Entities {
     }
 
     public static int getDamageFromEvent() {
-        //if (memberIllness == )
 
-        return 0;
+        Event chosenEvent = Event.chooseRandomEvent();
+        int total = 0;
+
+        //damage from diseases??? do i need this
+        for (int i = 0; i < 5; i++) {
+            if (!memberIllness[i].equals("Healthy")) {
+                total = total + 20;
+            } else {
+
+            }
+        }
+
+
+
+        return total;
+
+    }
+
+    public static double dailyHealthRegen() {
+        return 0.1 * deathHealth;
     }
 
 
