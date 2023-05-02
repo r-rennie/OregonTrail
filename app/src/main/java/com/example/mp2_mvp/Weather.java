@@ -1,7 +1,7 @@
 /*
 File Name: Weather.java
 Date: April 4th, 2023
-Author(s): Maria Lyons
+Author(s): Maria Lyons, Rachael Rennie
 Description: changes the weather in the game based on time of year (to be expanded more in full game)
  */
 
@@ -13,8 +13,11 @@ public class Weather {
     private static int temperature;
     private static int avgLocationTemp;
     private static int randTempAdd;
+    private static int randPrecipitation;
+    private static int randInt;
     private static double avgPrecipitation;
     private static double precipitation;
+    private static String rainOrSnow;
     //Constructor
     public Weather() {
         this.temperature = 0;
@@ -256,11 +259,80 @@ public class Weather {
             System.out.println("Error");
         }
 
+        randPrecipitation = (int) (Math.random() * 100);
+        randInt = (int) (Math.random() * 100);
+
+        if (avgPrecipitation >= 3.0) {
+           if (randInt < 60) {
+               if (randPrecipitation < 30) {
+                   this.precipitation = 0.2;
+               }
+               else {
+                   this.precipitation = 0.8;
+               }
+           }
+           else {
+               this.precipitation = 0.0;
+           }
+        }
+        else if (avgPrecipitation >= 2.0) {
+            if (randInt < 45) {
+                if (randPrecipitation < 30) {
+                    this.precipitation = 0.2;
+                }
+                else {
+                    this.precipitation = 0.8;
+                }
+            }
+            else {
+                this.precipitation = 0.0;
+            }
+        }
+        else if (avgPrecipitation >= 1.0) {
+            if (randInt < 30) {
+                if (randPrecipitation < 30) {
+                    this.precipitation = 0.2;
+                }
+                else {
+                    this.precipitation = 0.8;
+                }
+            }
+            else {
+                this.precipitation = 0.0;
+            }
+        }
+        else {
+            if (randInt < 10) {
+                if (randPrecipitation < 30) {
+                    this.precipitation = 0.2;
+                }
+                else {
+                    this.precipitation = 0.8;
+                }
+            }
+            else {
+                this.precipitation = 0.0;
+            }
+
+        }
+
         randTempAdd = (int) (Math.random() * 41) - 20;
+
+
 
 
         this.temperature = avgLocationTemp + randTempAdd;
     }
+
+    public static void setRainOrSnow() {
+        if (temperature <= 32) {
+            rainOrSnow = "snow";
+        }
+        else { rainOrSnow = "rain"; }
+    }
+
+    public static String getRainOrSnow() { return rainOrSnow; }
+
 
 
 

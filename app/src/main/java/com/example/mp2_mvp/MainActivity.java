@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
                 dateBox.setText(Date.printDate(currentDate) + " - Days Elapsed: " + Date.getDaysElapsed() + " - Miles Traveled: " + Date.getMilesElapsed());
                 locationBox.setText(Location.findLocation(0, locations[0]));
-                climateStats.setText("Temperature: " + Weather.getTemperature());
+                climateStats.setText("Temperature: " + Weather.getTemperature() + "; Precipitation: " +  Weather.getPrecipitation() + "\" of " + Weather.getRainOrSnow());
                 hattieStats.setText(Entities.entityName[0] + " Health: " + Entities.getMemberIllness(0) + "; Injury: " + Entities.getMemberInjury(0));
                 p2Stats.setText(Entities.entityName[2] + " Health: " + Entities.getMemberIllness(2) + "; Injury: " + Entities.getMemberInjury(2));
                 p3Stats.setText(Entities.entityName[3] + " Health: " + Entities.getMemberIllness(3) + "; Injury: " + Entities.getMemberInjury(3));
