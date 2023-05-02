@@ -12,6 +12,7 @@ package com.example.mp2_mvp;
 
 public class Entities {
 
+    // Creating initial variables
     public static int healthModifier = 0;
     public static String[] entityName = new String[6];
     public static String[] memberIllness = new String[6];
@@ -21,7 +22,6 @@ public class Entities {
     public static int pace = 18;
     public int index = 0;
     public static String healthStatus;
-
     public static String paceWord;
     public static int poundsFoodConsumed = 0;
     private int role = 100;
@@ -51,10 +51,6 @@ public class Entities {
         memberIllness[role] = "Healthy";
         memberInjury[role] = "None";
     }
-    /*
-    Setting the original family member names; the 'role' can be the associated number for each family member/the
-    order their names are getting entered in
-     */
 
     /**
      * sets health of the family; health starts at 0 and climbs given circumstances of poor health maintenance
@@ -84,6 +80,11 @@ public class Entities {
         return healthStatus;
     }
 
+    /**
+     *
+     * @param role ; the
+     * @return
+     */
     public static String getMemberInjury(int role) {
         return memberInjury[role];
     }

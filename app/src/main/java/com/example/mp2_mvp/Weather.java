@@ -90,7 +90,7 @@ public class Weather {
                 avgLocationTemp = 34;
                 avgPrecipitation = 3.6;
             }
-            else { System.out.println("Error"); }
+            else { System.out.println("Error 1"); }
         }
         /* Location information from Fort Leavenworth to the Kansas River is averaged based on
            Seneca, KS climate conditions at different times of year
@@ -144,7 +144,7 @@ public class Weather {
                 avgLocationTemp = 30;
                 avgPrecipitation = 3.9;
             }
-            else { System.out.println("Error"); }
+            else { System.out.println("Error 2"); }
         }
         /* Location information from the Kansas River to Fort Kearny is averaged based on
            Hastings, NE climate conditions at different times of year
@@ -198,7 +198,7 @@ public class Weather {
                 avgLocationTemp = 27;
                 avgPrecipitation = 3.3;
             }
-            else { System.out.println("Error"); }
+            else { System.out.println("Error 3"); }
         }
         /* Location information from Fort Kearny to Ash Hollow is averaged based on
            North Platte, NE climate conditions at different times of year
@@ -252,11 +252,11 @@ public class Weather {
                 avgLocationTemp = 25;
                 avgPrecipitation = 1.9;
             }
-            else { System.out.println("Error"); }
+            else { System.out.println("Error 4"); }
 
         }
         else {
-            System.out.println("Error");
+            System.out.println("Error 5");
         }
 
         randPrecipitation = (int) (Math.random() * 100);
