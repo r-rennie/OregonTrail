@@ -345,4 +345,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/climateStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="climateStats"
+        tools:layout_editor_absoluteX="922dp"
+        tools:layout_editor_absoluteY="204dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
