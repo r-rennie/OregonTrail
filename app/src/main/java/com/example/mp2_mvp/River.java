@@ -41,22 +41,24 @@ public class River extends Location {
         //If health is below certain amount (must be very low) fail
         // If wagon health is low (medium) fail
         //Some rivers are worse than others
+        boolean crossSuccess = true;
         if (Entities.getHealthInt() < 120) {
-            return true;
+            crossSuccess = true;
         }
 
         if (wheelCondition > 50 && axelCondition > 50 && tongueCondition > 50) {
-            return true;
+            crossSuccess = true;
         }
 
         int randInt = (int) (Math.random() * 100);
-        if (randInt <= 10) {
-
+        if (randInt <= 90) {
+            crossSuccess = true;
         }
 
         else {
-            return false;
+            crossSuccess = false;
         }
+        return crossSuccess;
     }
     //Swimming/Walking Across (https://www.loupcity.com/when-to-ford-rivers-in-oregon-trail/)
     boolean riverSwimAcrossSucceed(int health, int depth){
