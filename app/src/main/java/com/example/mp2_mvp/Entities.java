@@ -150,17 +150,7 @@ public class Entities {
     }
 
     public static int getPace() {
-        if (pace == 0) {
-            return 0;
-        } else if(pace == 1) {
-            return 15;
-        } else if(pace == 2) {
-            return 20;
-        } else if(pace == 3) {
-            return 25;
-        } else {
-            return -1;
-        }
+       return pace;
     }
 
     public static void setPace(int useToSet) {
@@ -168,30 +158,52 @@ public class Entities {
             pace = 0;
             paceWord = "Resting";
         } else if (useToSet == 1) {
-            pace = 1;
+            pace = 15;
             paceWord = "Steady";
         } else if (useToSet == 2) {
-            pace = 2;
+            pace = 20;
             paceWord = "Strenuous";
         } else if (useToSet == 3) {
-            pace = 3;
+            pace = 25;
             paceWord = "Grueling";
         }
+        else {
+            pace = -1;
+        }
+
+        // Decrease speed by 10% for each sick party member
+        double fillerVar = 0.0;
+        for (int i = 2; i <= 5; i++) {
+            if (memberIllness[i] != "Healthy" || memberInjury[i] != "None") {
+                fillerVar += 0.1;
+            }
+            if (memberIllness[0] != "Healthy" || memberInjury[0] != "None") {
+                fillerVar += 0.1;
+            }
+
+            fillerVar = 1.0 - fillerVar;
+            pace = (int) (pace * fillerVar);
+        }
+
+        // For every inch of snow/rain on/in the ground, the speed is reduced by 5%
+        // CHANGE TO cumulative snow vs. just daily
+        if (Weather.getPrecipitation() > 1.0) {
+            double filler = Weather.getPrecipitation() * 0.05;
+            filler = 1.0 - filler;
+            pace = (int) (pace * filler);
+        }
+
+        // Random odds of crossing mountainous terrain
+        int randInt = (int) (Math.random() * 100);
+        if (randInt <= 15) {
+            pace = (int) (pace * 0.5);
+        }
+
     }
 
+
     public static int getDamageFromPace() {
-        if (pace == 0) {
-            return 0;
-        } else if (pace == 1) {
-            return 2;
-        } else if (pace == 2) {
-            return 4;
-        } else if (pace == 3) {
-            return 6;
-        } else {
-            System.out.println(pace);
-            return 100;
-        }
+        return pace;
     }
 
     public static String getHealthStatus() {
