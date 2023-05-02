@@ -2,7 +2,7 @@
 File Name: Inventory.java
 Date:April 4th, 2023
 Author(s): Daniel MacDonald
-Decription: Monitors quantity/addition/subtraction of supplies in the wagon
+Description: Monitors quantity/addition/subtraction of supplies in the wagon
  */
 
 package com.example.mp2_mvp;
@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Inventory {
     private static final ArrayList<Integer> supplies = new ArrayList<Integer>();
 
-    ArrayList<Integer> getSupplies(){ return this.supplies; }
+    static ArrayList<Integer> getSupplies(){ return supplies; }
 
     /**
      * Adds items to inventory
@@ -24,7 +24,7 @@ public class Inventory {
      */
     public static boolean addSupplies(int item, int amount){
 
-        if(item < 22 && item > 1) {
+        if(item < 22 && item > -1) {
             for (int i = 0; i < amount; i++) {
                 supplies.add(item);
             }

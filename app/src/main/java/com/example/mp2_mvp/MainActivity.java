@@ -13,8 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView randomEvent = findViewById(R.id.randomEventText);
         final ImageView hattie_img = findViewById(R.id.hattieImg);
         final TextView climateStats = findViewById(R.id.climateStats);
+        final ListView inventoryDisplay = findViewById(R.id.inventoryDisplay);
 
         final Entities[] entities = new Entities[5];
 
@@ -157,6 +160,19 @@ public class MainActivity extends AppCompatActivity {
                         addButton.setVisibility(View.VISIBLE);
                         addInventoryEdit.setVisibility(View.VISIBLE);
 
+                        addButton.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View view) {
+                                String addItem = addInventoryEdit.getText().toString();
+                                int addItemId = Integer.parseInt(addItem);
+                                Inventory.addSupplies(addItemId,1);
+                                ArrayList<Integer> inv = new ArrayList<Integer>();
+                                inv = Inventory.getSupplies();
+
+
+                            }
+                        });
                     }
                 });
                 nextDayButton.setOnClickListener(new View.OnClickListener() {
