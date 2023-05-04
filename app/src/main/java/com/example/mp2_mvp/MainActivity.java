@@ -10,6 +10,7 @@ package com.example.mp2_mvp;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -26,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ArrayList<String> listItems=new ArrayList<String>();
+        ArrayAdapter<String> adapter;
         // GUI variables for buttons, images, and text
         final TextView text = findViewById(R.id.textBox);
         final EditText userInput = findViewById(R.id.editTextInput);
