@@ -9,7 +9,7 @@ Description: Monitors the passing of time in the game; increments date, days ela
 package com.example.mp2_mvp;
 
 public class Date {
-
+    // Creating variables
     private static int month = 0;
     private static int day = 1;
     private static int year = 1850;
