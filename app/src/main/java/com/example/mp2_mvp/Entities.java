@@ -81,26 +81,45 @@ public class Entities {
     }
 
     /**
-     *
-     * @param role ; the
-     * @return
+     * Gets the injury status of a given member
+     * @param role ; the role referring to which member is being checked for injury
+     * @return ; the String value describing the given member's injury, if any
      */
     public static String getMemberInjury(int role) {
         return memberInjury[role];
     }
 
+    /**
+     * Sets the injury status of a given member
+     * @param role ; the role referring to which member the injury is being added to
+     * @param condition ; the injury condition that is being added to the given member
+     */
     public static void setMemberInjury(int role, String condition) {
         memberInjury[role] = condition;
     }
 
+    /**
+     * Gets the illness status of a given member
+     * @param role ; the role referring to which member is being checked for illness
+     * @return ; the String value desscribign the given member's illness, if any
+     */
     public static String getMemberIllness(int role) {
         return memberIllness[role];
     }
 
+    /**
+     * Sets the illness status of a given member
+     * @param role ; the role referring to which member the illness is being added to
+     * @param condition ; the illness condition that is being added to the given member
+     */
     public static void setMemberIllness(int role, String condition) {
         memberIllness[role] = condition;
     }
 
+    /**
+     * Gets the integer health value of the collective party
+     * @return the party's integer health value
+     */
     public static int getHealthInt() {
         return partyHealth;
     }
@@ -115,10 +134,19 @@ public class Entities {
         System.out.println("foodRations: " + foodRations);
     }
 
+    /**
+     * Says how much food has been eaten so it can be removed from the wagon inventory
+     * @param pace ; the pace at which the wagon is travelling
+     * @return ; how much food has been eaten
+     */
     public static int foodEaten(int pace) {
         return 5 * pace;
     }
 
+    /**
+     * Accounts for damage from limited food rationing/hunger
+     * @return ; damage due to rationing
+     */
     public static int getDamageFromRations(){
         if (foodRations == 3) {
             return 0;
@@ -134,7 +162,8 @@ public class Entities {
     }
 
     /**
-     * @return the current food rationing of the family
+     * Gets the string value describing the current food rationing
+     * @return ; the current food rationing of the family
      */
     public static String getFoodRations() {
         if (foodRations == 3) {
@@ -150,10 +179,19 @@ public class Entities {
         }
     }
 
+    /**
+     * Gets the current pace of the wagon
+     * @return ; the wagon pace
+     */
     public static int getPace() {
        return pace;
     }
 
+    /**
+     * Sets the pace of the wagon
+     * Wagon pace is decremented based on member injury, member illness, poor trail conditions, and poor oxen health
+     * @param useToSet
+     */
     public static void setPace(int useToSet) {
         if (useToSet == 0) {
             pace = 0;
@@ -171,6 +209,7 @@ public class Entities {
         else {
             pace = -1;
         }
+
 
         // Decrease speed by 10% for each sick party member
         double fillerVar = 0.0;
@@ -203,22 +242,30 @@ public class Entities {
     }
 
 
-    public static int getDamageFromPace() {
-        return pace;
-    }
 
+    /*
+    public static int getDamageFromPace() {
+        return
+    }
+     */
+
+    /**
+     * Gets the overall party health status as a String
+     * @return ; the part health status String description
+     */
     public static String getHealthStatus() {
         return healthStatus;
     }
 
-    public static String getCharacterHealth(int character) {
-        return healthStatus;
-    }
-
+    /**
+     * Sets the string health association for the overall party
+     * @param characterHealth ; the String representation being assigned
+     */
     public void setCharacterHealth(String characterHealth) {
         healthStatus = characterHealth;
     }
 
+    /*
     public static int getDamageFromEvent() {
 
         Event chosenEvent = Event.chooseRandomEvent();
@@ -238,13 +285,21 @@ public class Entities {
         return total;
 
     }
+    */
 
+    /**
+     * Determines how much health is naturally regenerated each day
+     * @return how much of the health will be restored each day
+     */
     public static double dailyHealthRegen() {
         return 0.1 * deathHealth;
     }
 
 
-
+    /**
+     *
+     * @return the string name associated with a certain character index
+     */
     @Override
     public String toString() { return entityName[index]; }
 

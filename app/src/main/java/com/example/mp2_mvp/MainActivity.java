@@ -184,12 +184,12 @@ public class MainActivity extends AppCompatActivity {
                         randomEvent.setVisibility(View.INVISIBLE);
                         //what decreases health: food, pace, events
                         System.out.println("Ration damage: " + Entities.getDamageFromRations());
-                        System.out.println("Pace damage: " + Entities.getDamageFromPace());
+                        // System.out.println("Pace damage: " + Entities.getDamageFromPace());
 
                         //System.out.println("Event damage: " + Entities.getDamageFromEvent());
-                        Entities.healthModifier = Entities.getDamageFromRations() + Entities.getDamageFromPace() /*+ Entities.getDamageFromEvent()*/;
+                        Entities.healthModifier = Entities.getDamageFromRations(); /* + Entities.getDamageFromPace() + Entities.getDamageFromEvent()*/;
 
-                        Entities.healthModifier = Entities.getDamageFromRations() + Entities.getDamageFromPace();
+                        Entities.healthModifier = Entities.getDamageFromRations(); /* + Entities.getDamageFromPace(); */
 
                         Entities.setHealth(Entities.healthModifier);
 

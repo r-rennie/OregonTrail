@@ -1,3 +1,10 @@
+/*
+File Name: Wagon.java
+Date: May 5th, 2023
+Author(s):
+Description: Deals with the condition of the wagon and it's parts
+ */
+
 package com.example.mp2_mvp;
 
 public class Wagon {

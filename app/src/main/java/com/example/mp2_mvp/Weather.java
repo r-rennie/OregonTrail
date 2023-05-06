@@ -2,7 +2,7 @@
 File Name: Weather.java
 Date: April 4th, 2023
 Author(s): Maria Lyons, Rachael Rennie
-Description: changes the weather in the game based on time of year (to be expanded more in full game)
+Description: changes the weather in the game based on time of year
  */
 
 package com.example.mp2_mvp;
@@ -259,9 +259,13 @@ public class Weather {
             System.out.println("Error 5");
         }
 
-        randPrecipitation = (int) (Math.random() * 100);
+        // Finds random numbers that act as percentages (out of 100) to determine the chance of precipitation
         randInt = (int) (Math.random() * 100);
+        // Finds random numbers that act as percentages (out of 100) to determine if precipitation is heavy or light
+        randPrecipitation = (int) (Math.random() * 100);
 
+
+        // If the average monthly precipitation is above 3.0 inches, there is the greatest chance of precipitation
         if (avgPrecipitation >= 3.0) {
            if (randInt < 60) {
                if (randPrecipitation < 30) {
@@ -275,6 +279,7 @@ public class Weather {
                this.precipitation = 0.0;
            }
         }
+        // If the average monthly precipitation is >= 2.0 and < 3.0, there is a slightly lower chance of precipitation
         else if (avgPrecipitation >= 2.0) {
             if (randInt < 45) {
                 if (randPrecipitation < 30) {
@@ -288,6 +293,7 @@ public class Weather {
                 this.precipitation = 0.0;
             }
         }
+        // If the average monthly precipitation is 1.0 >= and < 2.0, there is an even lower chance of precipitation
         else if (avgPrecipitation >= 1.0) {
             if (randInt < 30) {
                 if (randPrecipitation < 30) {
@@ -302,6 +308,7 @@ public class Weather {
             }
         }
         else {
+            // Otherwise, there is a very slim chance of precipitation
             if (randInt < 10) {
                 if (randPrecipitation < 30) {
                     this.precipitation = 0.2;
@@ -316,14 +323,16 @@ public class Weather {
 
         }
 
+        // Finds a random number between -20 and 20 to add to the average monthly temperature for daily variation
         randTempAdd = (int) (Math.random() * 41) - 20;
 
-
-
-
+        // returns the daily temperature once combined with the random number
         this.temperature = avgLocationTemp + randTempAdd;
     }
 
+    /**
+     * Determines if the daily precipitation is rain or snow based on that day's temperature
+     */
     public static void setRainOrSnow() {
         if (temperature <= 32) {
             rainOrSnow = "snow";
@@ -331,6 +340,10 @@ public class Weather {
         else { rainOrSnow = "rain"; }
     }
 
+    /**
+     * Gets if the daily precipitation is rain or snow
+     * @return "rain" or "snow" based on the type of daily precipitation
+     */
     public static String getRainOrSnow() { return rainOrSnow; }
 
 
