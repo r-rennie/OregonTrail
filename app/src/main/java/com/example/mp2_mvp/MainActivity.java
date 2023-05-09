@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView foodBox = findViewById(R.id.foodBox);
         final TextView randomEvent = findViewById(R.id.randomEventText);
         final ImageView hattie_img = findViewById(R.id.hattieImg);
+        final ImageView oregon_gui = findViewById(R.id.oregongui);
         final TextView climateStats = findViewById(R.id.climateStats);
         final ListView inventoryDisplay = findViewById(R.id.inventoryDisplay);
 
@@ -98,6 +99,15 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
 
+                Location[] locations = new Location[5];
+
+                // creates the locations
+                locations[0] = new Location(0, 1 ,"Independence, Missouri");
+                locations[1] = new Fort(35, 2, "Fort Leavenworth");
+                locations[2] = new River(105, 3, "Kansas River Crossing", 5);
+                locations[3] = new Fort(335, 4, "Fort Kearny");
+                locations[4] = new Location(505, 5, "Ash Hollow, Nebraska");
+
                 System.out.println(Arrays.toString(entities));
                 startButton.setVisibility(View.GONE);
                 nextDayButton.setVisibility(View.VISIBLE);
@@ -114,20 +124,14 @@ public class MainActivity extends AppCompatActivity {
                 hattie_img.setVisibility(View.VISIBLE);
                 randomEvent.setVisibility(View.INVISIBLE);
                 inventoryButton.setVisibility(View.VISIBLE);
+                //hattieStats.setBackground(getResources().getDrawable(R.drawable.oregongui));
+                //oregon_gui.setBackground();
+
                 // Sets the generic game info
                 Date currentDate = new Date(5,1,1850);
                 Inventory.addSupplies(2,2000);
                 Entities.setFoodRations(3);
                 Entities.setPace(3);
-
-                Location[] locations = new Location[5];
-
-                // creates the locations
-                locations[0] = new Location(0, 1 ,"Independence, Missouri");
-                locations[1] = new Fort(35, 2, "Fort Leavenworth");
-                locations[2] = new River(105, 3, "Kansas River Crossing", 5);
-                locations[3] = new Fort(335, 4, "Fort Kearny");
-                locations[4] = new Location(505, 5, "Ash Hollow, Nebraska");
 
                 dateBox.setText(Date.printDate(currentDate) + " - Days Elapsed: " + Date.getDaysElapsed() + " - Miles Traveled: " + Date.getMilesElapsed());
                 locationBox.setText(Location.findLocation(0, locations[0]));
@@ -274,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
         items[16] = new Item(16,"Seed Packages",0.01, 10);
         items[17] = new Item(17,"Shovel",2.5, 10);
         items[18] = new Item(18,"Coffee Mill",1, 10);
-        items[19] = new Item(19,"Frying Pan",1.5, 10);
+        items[19] = new Item(19,"Fishing Rod",75, 1);
         items[20] = new Item(20,"Pan",0.25, 10);
         items[21] = new Item(21,"Enchantment Table",400, 10);
 

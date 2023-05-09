@@ -349,11 +349,11 @@
         android:id="@+id/climateStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="164dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="305dp"
         android:text="climateStats"
-        app:layout_constraintEnd_toEndOf="@+id/_dynamic"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -380,5 +380,16 @@
             android:visibility="gone"
             tools:visibility="visible" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/oregongui"
+        android:layout_width="675dp"
+        android:layout_height="258dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginEnd="2dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/p4Stats"
+        app:layout_constraintTop_toBottomOf="@+id/foodBox"
+        app:srcCompat="@drawable/oregongui" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
