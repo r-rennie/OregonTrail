@@ -4,31 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/oregontrailtitle"
+    android:background="@drawable/oregonguifixedcopy"
     android:screenOrientation="landscape"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toStartOf="@+id/oregontrailguifixed"
-        app:layout_constraintGuide_percent="0.35"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toEndOf="@+id/nextDay"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:translationX="750dp"
+        android:translationY="500dp"
+        tools:layout_editor_absoluteX="970dp"
+        tools:layout_editor_absoluteY="696dp"
+        tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -37,8 +26,7 @@
         android:layout_marginEnd="1920dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_begin="574dp"
-        app:layout_constraintStart_toEndOf="@+id/guideline" />
+        app:layout_constraintGuide_begin="574dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -50,24 +38,35 @@
     <Button
         android:id="@+id/enterButton1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="678dp"
+        android:layout_marginTop="485dp"
+        android:layout_marginEnd="1154dp"
+        android:layout_marginBottom="547dp"
         android:text="Enter"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone" />
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/enterButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="675dp"
+        android:layout_marginTop="533dp"
+        android:layout_marginEnd="1157dp"
+        android:layout_marginBottom="499dp"
         android:text="Enter"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/continueButton"
@@ -82,11 +81,16 @@
 
     <EditText
         android:id="@+id/editTextInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="95dp"
+        android:layout_height="103dp"
+        android:layout_marginEnd="1819dp"
+        android:layout_marginBottom="979dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="parent"
+        android:translationX="100dp"
+        android:translationY="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -96,34 +100,43 @@
         android:id="@+id/editTextNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="427dp"
+        android:layout_marginStart="855dp"
+        android:layout_marginTop="712dp"
+        android:layout_marginEnd="855dp"
+        android:layout_marginBottom="322dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:translationY="0dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/nextDay"
-        app:layout_constraintTop_toBottomOf="@+id/foodBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="252dp"
         android:layout_height="272dp"
+        android:layout_marginStart="828dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="840dp"
+        android:layout_marginBottom="396dp"
         android:text="start game"
         android:translationY="300dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/oregontrailguifixed"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/oregontrailguifixed"
-        tools:visibility="gone" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/groupHealth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="groupHealth"
@@ -132,6 +145,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.599"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 
@@ -161,7 +175,6 @@
         android:translationX="-300dp"
         android:translationY="-460dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/oregontrailguifixed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -267,10 +280,10 @@
 
     <Button
         android:id="@+id/nextDay"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="860dp"
-        android:layout_marginEnd="223dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="895dp"
+        android:layout_marginEnd="875dp"
         android:scaleX="1"
         android:scaleY="1"
         android:text="next day"
@@ -280,7 +293,7 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNameInput"
+        app:layout_constraintStart_toEndOf="@+id/inventoryButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
@@ -297,18 +310,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533"
         app:srcCompat="@drawable/hattie" />
 
     <TextView
         android:id="@+id/randomEventText"
         android:layout_width="103dp"
         android:layout_height="34dp"
+        android:layout_marginTop="355dp"
+        android:layout_marginBottom="916dp"
         android:textAlignment="center"
         android:translationX="-560dp"
         android:translationY="-225dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/oregontrailguifixed"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -355,27 +372,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/oregontrailguifixed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/textBox"
-        app:srcCompat="@drawable/oregonguifixedcopy"
-        tools:visibility="visible" />
-
     <RelativeLayout
         android:id="@+id/idRLContainer"
         android:layout_width="921dp"
         android:layout_height="1080dp"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/oregontrailguifixed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        tools:visibility="gone">
 
         <Button
             android:id="@+id/addButton"
@@ -418,19 +425,20 @@
             android:visibility="gone"
             tools:visibility="visible" />
 
+        <EditText
+            android:id="@+id/InventoryEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="130dp"
+            android:hint="Enter item name to add in ist"
+            android:translationX="0dp"
+            android:translationY="800dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            tools:visibility="visible" />
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/InventoryEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="130dp"
-        android:hint="Enter item name to add in ist"
-        android:translationX="1130dp"
-        android:translationY="600dp"
-        android:visibility="gone"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
