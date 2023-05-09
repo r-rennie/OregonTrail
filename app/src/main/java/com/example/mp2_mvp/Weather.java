@@ -333,18 +333,25 @@ public class Weather {
     /**
      * Determines if the daily precipitation is rain or snow based on that day's temperature
      */
-    public static void setRainOrSnow() {
+   /* public static void setRainOrSnow() {
         if (temperature <= 32) {
             rainOrSnow = "snow";
         }
         else { rainOrSnow = "rain"; }
     }
-
+*/
     /**
      * Gets if the daily precipitation is rain or snow
      * @return "rain" or "snow" based on the type of daily precipitation
      */
-    public static String getRainOrSnow() { return rainOrSnow; }
+    public static String getRainOrSnow() {
+        if (temperature <= 32) {
+            return "snow";
+        }
+        else {
+            return "rain";
+        }
+    }
 
 
 }
