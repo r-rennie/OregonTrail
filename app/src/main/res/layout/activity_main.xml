@@ -283,56 +283,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodBox" />
 
-    <EditText
-        android:id="@+id/removeInventoryEdit"
-        android:layout_width="255dp"
-        android:layout_height="82dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="46dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Remove"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/removeButton"
-        app:layout_constraintEnd_toStartOf="@+id/groupHealth"
-        tools:visibility="visible" />
-
-    <EditText
-        android:id="@+id/addInventoryEdit"
-        android:layout_width="238dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="38dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Add"
-        android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@+id/groupHealth"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/removeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="80dp"
-        android:text="REMOVE"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/removeInventoryEdit"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="2dp"
-        android:text="add"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/addInventoryEdit"
-        app:layout_constraintTop_toBottomOf="@+id/addInventoryEdit"
-        tools:visibility="visible" />
 
     <Button
         android:id="@+id/inventoryButton"
@@ -355,30 +305,56 @@
         app:layout_constraintEnd_toEndOf="@+id/_dynamic"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <RelativeLayout
+        android:id="@+id/idRLContainer"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="623dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="654dp"
-        android:layout_marginBottom="9dp"
-        android:gravity="center_horizontal"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/guideline2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextInput"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:context=".MainActivity"
-        tools:visibility="visible">
+        tools:context=".MainActivity">
 
-        <ListView
-            android:id="@+id/inventoryDisplay"
+        <EditText
+            android:id="@+id/InventoryEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="Add or Remove items"
+            android:translationX="870dp"
+            android:translationY="600dp"
             android:visibility="gone"
             tools:visibility="visible" />
-    </LinearLayout>
 
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:textAllCaps="true"
+            android:translationX="910dp"
+            android:translationY="650dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/removeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="80dp"
+            android:text="REMOVE"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <ListView
+            android:id="@+id/inventoryListView"
+            android:layout_width="421dp"
+            android:layout_height="486dp"
+            android:layout_below="@id/InventoryEdit"
+            android:translationX="750dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
