@@ -249,6 +249,10 @@ public class MainActivity extends AppCompatActivity  {
                         }
                         */
 
+                        if (Location.location(Date.getMilesElapsed(), Entities.pace).equals("Kansas River Crossing")) {
+
+                        }
+
                         // Ends the game once the final location is reached
                         if (Location.location(Date.getMilesElapsed(), Entities.pace).equals("Ash Hollow, Nebraska")) {
                             nextDayButton.setVisibility(View.GONE);

@@ -42,7 +42,7 @@ public class River extends Location {
         // If wagon health is low (medium) fail
         //Some rivers are worse than others
         boolean crossSuccess = true;
-        if (Entities.getHealthInt() < 120) {
+        if (Entities.getHealthInt() > 120) {
             crossSuccess = true;
         }
 

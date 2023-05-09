@@ -130,7 +130,11 @@ public class Date {
                 month++;
             }
         }
-        if (day > 30 && (month == 4 || month == 6 || month == 9 || month == 11 )) {
+        else if (day > 30 && (month == 4 || month == 6 || month == 9 || month == 11 )) {
+            day = 1;
+            month++;
+        }
+        else if (day > 28 && (month == 2)) {
             day = 1;
             month++;
         }
