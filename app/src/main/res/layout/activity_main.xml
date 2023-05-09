@@ -13,9 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="gone" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -23,14 +24,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintEnd_toStartOf="@+id/oregontrailguifixed"
+        app:layout_constraintGuide_percent="0.35"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/nextDay"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="1920dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="574dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="574dp"
+        app:layout_constraintStart_toEndOf="@+id/guideline" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -44,10 +52,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="gone" />
 
     <Button
@@ -56,10 +64,10 @@
         android:layout_height="wrap_content"
         android:text="Enter"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/continueButton"
@@ -67,10 +75,10 @@
         android:layout_height="wrap_content"
         android:text="Continue"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextInput"
@@ -78,291 +86,324 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="gone" />
 
     <EditText
         android:id="@+id/editTextNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="427dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:translationY="0dp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintStart_toEndOf="@+id/nextDay"
+        app:layout_constraintTop_toBottomOf="@+id/foodBox"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="252dp"
         android:layout_height="272dp"
         android:text="start game"
+        android:translationY="300dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/oregontrailguifixed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/oregontrailguifixed"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/groupHealth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="groupHealth"
-        android:translationY="260dp"
+        android:translationX="-560dp"
+        android:translationY="-100dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/p5Stats"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/p4Stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="p4Stats"
-        android:translationY="225dp"
+        android:translationX="550dp"
+        android:translationY="25dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/p3Stats"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="8dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="date"
-        android:translationY="50dp"
+        android:translationX="-300dp"
+        android:translationY="-460dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/hattieStats"
+        app:layout_constraintBottom_toBottomOf="@+id/oregontrailguifixed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/p5Stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="p5Stats"
-        android:translationY="250dp"
+        android:translationX="550dp"
+        android:translationY="125dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/idRLContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/p4Stats"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="location"
-        android:translationY="100dp"
+        android:translationY="-460dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/foodBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="foodBox"
-        android:translationY="400dp"
+        android:translationX="550dp"
+        android:translationY="150dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groupHealth"
+        app:layout_constraintTop_toTopOf="@+id/location"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/hattieStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="hattieStats"
-        android:translationY="150dp"
+        android:translationX="550dp"
+        android:translationY="-275dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location"
+        app:layout_constraintTop_toTopOf="@+id/idRLContainer"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/p3Stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="p3Stats"
-        android:translationY="200dp"
+        android:translationX="550dp"
+        android:translationY="-75dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/p2Stats"
+        app:layout_constraintTop_toTopOf="@+id/idRLContainer"
         tools:visibility="visible" />
 
     <TextView
         android:id="@+id/p2Stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="1486dp"
+        android:layout_marginEnd="128dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="p2Stats"
-        android:translationY="175dp"
+        android:translationX="550dp"
+        android:translationY="-175dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/idRLContainer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/randomEventText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hattieStats"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <Button
         android:id="@+id/nextDay"
-        android:layout_width="147dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="860dp"
+        android:layout_marginEnd="223dp"
         android:scaleX="1"
         android:scaleY="1"
         android:text="next day"
+        android:textSize="22sp"
         android:translationX="0dp"
-        android:translationY="250dp"
-        android:visibility="gone"
+        android:translationY="425dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNameInput"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodBox"
-        tools:visibility="gone" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/hattieImg"
-        android:layout_width="150dp"
-        android:layout_height="140dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="3dp"
+        android:layout_width="240dp"
+        android:layout_height="253dp"
         android:contentDescription="Hattie Campbell image from the book in blue dresss"
-        android:translationX="-760dp"
-        android:translationY="550dp"
+        android:translationX="0dp"
+        android:translationY="0dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hattie" />
 
     <TextView
         android:id="@+id/randomEventText"
         android:layout_width="103dp"
         android:layout_height="34dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="154dp"
         android:textAlignment="center"
+        android:translationX="-560dp"
+        android:translationY="-225dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/oregontrailguifixed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodBox" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/removeInventoryEdit"
-        android:layout_width="255dp"
-        android:layout_height="82dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="46dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="621dp"
+        android:layout_marginEnd="849dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Remove"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/removeButton"
-        app:layout_constraintEnd_toStartOf="@+id/groupHealth"
+        app:layout_constraintBottom_toBottomOf="@+id/date"
+        app:layout_constraintEnd_toStartOf="@+id/inventoryButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
-
-
-
-
-
 
 
     <Button
         android:id="@+id/inventoryButton"
-        android:layout_width="179dp"
-        android:layout_height="177dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="144dp"
+        android:layout_height="116dp"
         android:text="WAGON"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923" />
 
     <TextView
         android:id="@+id/climateStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="164dp"
         android:text="climateStats"
-        app:layout_constraintEnd_toEndOf="@+id/_dynamic"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        android:translationX="-560dp"
+        android:translationY="-275dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/oregontrailguifixed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/textBox"
+        app:srcCompat="@drawable/oregonguifixedcopy"
+        tools:visibility="visible" />
 
     <RelativeLayout
         android:id="@+id/idRLContainer"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_width="921dp"
+        android:layout_height="1080dp"
         android:orientation="vertical"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/oregontrailguifixed"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".MainActivity">
-
-        <EditText
-            android:id="@+id/InventoryEdit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Enter item name to add in ist"
-            android:translationX="1130dp"
-            android:translationY="600dp"
-            android:visibility="gone"
-            tools:visibility="visible" />
 
         <Button
             android:id="@+id/addButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:text="ADD"
             android:textAllCaps="true"
-            android:translationX="1200dp"
-            android:translationY="650dp"
+            android:textSize="18dp"
+            android:translationX="655dp"
+            android:translationY="840dp"
             android:visibility="gone"
             tools:visibility="visible" />
 
         <Button
             android:id="@+id/removeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="76dp"
-            android:layout_marginTop="80dp"
+            android:layout_width="125dp"
+            android:layout_height="75dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="657dp"
+            android:layout_marginTop="940dp"
+            android:layout_marginEnd="112dp"
+            android:layout_marginBottom="48dp"
             android:text="REMOVE"
+            android:textSize="18sp"
+            android:translationY="10dp"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -371,9 +412,25 @@
             android:layout_width="421dp"
             android:layout_height="486dp"
             android:layout_below="@id/InventoryEdit"
-            android:translationX="750dp"
+            android:layout_marginTop="-515dp"
+            android:translationX="150dp"
+            android:translationY="700dp"
             android:visibility="gone"
             tools:visibility="visible" />
 
     </RelativeLayout>
+
+    <EditText
+        android:id="@+id/InventoryEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="130dp"
+        android:hint="Enter item name to add in ist"
+        android:translationX="1130dp"
+        android:translationY="600dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity  {
         final ImageView hattie_img = findViewById(R.id.hattieImg);
         final TextView climateStats = findViewById(R.id.climateStats);
         final ListView inventoryListView = findViewById(R.id.inventoryListView);
+        final ImageView gui = findViewById(R.id.oregontrailguifixed);
 
         final Entities[] entities = new Entities[5];
 
