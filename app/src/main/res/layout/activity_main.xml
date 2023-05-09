@@ -12,11 +12,18 @@
         android:id="@+id/textBox"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="970dp"
+        android:layout_marginTop="696dp"
+        android:layout_marginEnd="949dp"
+        android:layout_marginBottom="351dp"
         android:textSize="24sp"
-        android:translationX="750dp"
-        android:translationY="500dp"
-        tools:layout_editor_absoluteX="970dp"
-        tools:layout_editor_absoluteY="696dp"
+        android:translationX="0dp"
+        android:translationY="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -39,10 +46,10 @@
         android:id="@+id/enterButton1"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="678dp"
-        android:layout_marginTop="485dp"
-        android:layout_marginEnd="1154dp"
-        android:layout_marginBottom="547dp"
+        android:layout_marginStart="855dp"
+        android:layout_marginTop="941dp"
+        android:layout_marginEnd="977dp"
+        android:layout_marginBottom="91dp"
         android:text="Enter"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,15 +62,14 @@
         android:id="@+id/enterButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="675dp"
-        android:layout_marginTop="533dp"
-        android:layout_marginEnd="1157dp"
-        android:layout_marginBottom="499dp"
+        android:layout_marginStart="977dp"
+        android:layout_marginTop="941dp"
+        android:layout_marginEnd="855dp"
+        android:layout_marginBottom="91dp"
         android:text="Enter"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
@@ -94,17 +100,18 @@
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone" />
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/editTextNameInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="252dp"
+        android:layout_height="70dp"
         android:layout_marginStart="855dp"
         android:layout_marginTop="712dp"
         android:layout_marginEnd="855dp"
         android:layout_marginBottom="322dp"
         android:ems="10"
+        android:hint="Input name"
         android:inputType="textPersonName"
         android:translationY="0dp"
         android:visibility="gone"
@@ -124,7 +131,7 @@
         android:layout_marginBottom="396dp"
         android:text="start game"
         android:translationY="300dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -200,11 +207,15 @@
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="935dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="935dp"
+        android:layout_marginBottom="995dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="location"
-        android:translationY="-460dp"
-        android:visibility="gone"
+        android:translationY="0dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -325,9 +336,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintHorizontal_bias="0.801"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.057" />
 
     <EditText
         android:id="@+id/removeInventoryEdit"
@@ -382,7 +394,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".MainActivity"
-        tools:visibility="gone">
+        tools:visibility="visible">
 
         <Button
             android:id="@+id/addButton"
@@ -392,7 +404,7 @@
             android:textAllCaps="true"
             android:textSize="18dp"
             android:translationX="655dp"
-            android:translationY="840dp"
+            android:translationY="800dp"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -410,7 +422,7 @@
             android:layout_marginBottom="48dp"
             android:text="REMOVE"
             android:textSize="18sp"
-            android:translationY="10dp"
+            android:translationY="-30dp"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -420,8 +432,8 @@
             android:layout_height="486dp"
             android:layout_below="@id/InventoryEdit"
             android:layout_marginTop="-515dp"
-            android:translationX="150dp"
-            android:translationY="700dp"
+            android:translationX="750dp"
+            android:translationY="600dp"
             android:visibility="gone"
             tools:visibility="visible" />
 
@@ -432,12 +444,21 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="130dp"
             android:hint="Enter item name to add in ist"
-            android:translationX="0dp"
+            android:translationX="800dp"
             android:translationY="800dp"
             android:visibility="gone"
             app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
             tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="141dp"
+            android:layout_height="123dp"
+            android:text="BACK"
+            android:textSize="20sp"
+            android:translationX="250dp"
+            android:translationY="850dp" />
     </RelativeLayout>
 
 
