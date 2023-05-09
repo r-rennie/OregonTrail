@@ -65,13 +65,14 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
         // GUI variables for buttons, images, and text
+        //final TextView text = findViewById(R.id.textBox);
         final TextView text = findViewById(R.id.textBox);
         final EditText userInput = findViewById(R.id.editTextInput);
         final EditText nameInput = findViewById(R.id.editTextNameInput);
         final EditText inventoryEdit = findViewById(R.id.InventoryEdit);
-        final Button startEnter = findViewById(R.id.enterButton1);
+        final Button startEnter = findViewById(R.id.startButton);
         final Button nameEnter = findViewById(R.id.enterButton2);
-        final Button startButton = findViewById(R.id.startButton);
+        final Button startButton = findViewById(R.id.enterButton1);
         final Button nextDayButton = findViewById(R.id.nextDay);
         final Button inventoryButton = findViewById(R.id.inventoryButton);
         final Button backButton = findViewById(R.id.backButton);
@@ -98,13 +99,20 @@ public class MainActivity extends AppCompatActivity  {
         startEnter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                userInput.setVisibility(View.GONE);
-                nameInput.setVisibility(View.VISIBLE);
-                nameInput.setHint("Enter names here - press ENTER in between");
+                //System.out.println("HERE!!!!");
                 startEnter.setVisibility(View.GONE);
+                userInput.setVisibility(View.GONE);
+
+                nameInput.setVisibility(View.VISIBLE);
+                nameInput.bringToFront();
                 nameEnter.setVisibility(View.VISIBLE);
+                nameEnter.bringToFront();
+
+                text.setVisibility(View.VISIBLE);
+                text.bringToFront();
                 text.setText("Your name is Hattie Campbell.\nWhat are the names of the other members in your party?\n     1. Hattie");
 
+                nameInput.setHint("Enter names here - press ENTER in between");
                 entities[0] = new Entities(0, "Hattie");
 
                 nameEnter.setOnClickListener(new View.OnClickListener() {
