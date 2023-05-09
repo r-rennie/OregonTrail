@@ -5,7 +5,7 @@ public class River extends Location {
     //Variables
     public int riverChoice = 0;
     public int riverDepth = 0;
-    public static double FERRY_PRICE = 5;
+    public static double FERRY_PRICE = 15;
 
     //Constructor
 

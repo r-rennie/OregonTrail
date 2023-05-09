@@ -7,11 +7,19 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
+<<<<<<< HEAD
             <value value="C:\Users\danie\.android\avd\Medium_Desktop_API_32_1.avd" />
+=======
+            <value value="C:\Users\danie\.android\avd\Pixel_5_API_30.avd" />
+>>>>>>> origin/main
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
+<<<<<<< HEAD
     <timeTargetWasSelectedWithDropDown value="2023-05-09T00:57:12.300706200Z" />
+=======
+    <timeTargetWasSelectedWithDropDown value="2023-04-25T12:08:48.941601200Z" />
+>>>>>>> origin/main
   </component>
 </project>
