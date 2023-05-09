@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity  {
                 if (!item.isEmpty()) {
                     invList.add(item);
                     adapter.notifyDataSetChanged();
+
                 }
 
             }
@@ -72,7 +74,10 @@ public class MainActivity extends AppCompatActivity  {
         final Button nameEnter = findViewById(R.id.enterButton2);
         final Button startButton = findViewById(R.id.startButton);
         final Button nextDayButton = findViewById(R.id.nextDay);
+        final Button removeButton = findViewById(R.id.removeButton);
+        final Button addButton = findViewById(R.id.removeButton);
         final Button inventoryButton = findViewById(R.id.inventoryButton);
+        final Button backButtonInv = findViewById(R.id.backButton);
         final TextView dateBox = findViewById(R.id.date);
         final TextView locationBox = findViewById(R.id.location);
         final TextView hattieStats = findViewById(R.id.hattieStats);
@@ -86,6 +91,7 @@ public class MainActivity extends AppCompatActivity  {
         final ImageView hattie_img = findViewById(R.id.hattieImg);
         final TextView climateStats = findViewById(R.id.climateStats);
         final ListView inventoryListView = findViewById(R.id.inventoryListView);
+        final RelativeLayout inventoryLayout = findViewById(R.id.inventoryLayout);
 
         final Entities[] entities = new Entities[5];
 
@@ -195,11 +201,36 @@ public class MainActivity extends AppCompatActivity  {
                         addButton.setVisibility(View.VISIBLE);
                         inventoryListView.setVisibility(View.VISIBLE);
                         inventoryEdit.setVisibility(View.VISIBLE);
-
+                        inventoryLayout.setVisibility(View.VISIBLE);
 
 
                     }
 
+                });
+                backButtonInv.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View view) {
+                        nextDayButton.setVisibility(View.VISIBLE);
+                        dateBox.setVisibility(View.VISIBLE);
+                        locationBox.setVisibility(View.VISIBLE);
+                        hattieStats.setVisibility(View.VISIBLE);
+                        p2Stats.setVisibility(View.VISIBLE);
+                        p3Stats.setVisibility(View.VISIBLE);
+                        p4Stats.setVisibility(View.VISIBLE);
+                        p5Stats.setVisibility(View.VISIBLE);
+                        healthBox.setVisibility(View.VISIBLE);
+                        foodBox.setVisibility(View.VISIBLE);
+                        randomEvent.setVisibility(View.VISIBLE);
+                        hattie_img.setVisibility(View.VISIBLE);
+                        randomEvent.setVisibility(View.VISIBLE);
+                        inventoryButton.setVisibility(View.VISIBLE);
+                        removeButton.setVisibility(View.GONE);
+                        addButton.setVisibility(View.GONE);
+                        inventoryListView.setVisibility(View.GONE);
+                        inventoryEdit.setVisibility(View.GONE);
+                        inventoryLayout.setVisibility(View.GONE);
+                    }
                 });
 
                 nextDayButton.setOnClickListener(new View.OnClickListener() {

@@ -283,25 +283,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodBox" />
 
-    <EditText
-        android:id="@+id/removeInventoryEdit"
-        android:layout_width="255dp"
-        android:layout_height="82dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="46dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Remove"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/removeButton"
-        app:layout_constraintEnd_toStartOf="@+id/groupHealth"
-        tools:visibility="visible" />
-
-
-
-
-
-
 
     <Button
         android:id="@+id/inventoryButton"
@@ -311,8 +292,10 @@
         android:layout_marginEnd="16dp"
         android:text="WAGON"
         android:textSize="24sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/climateStats"
@@ -325,25 +308,27 @@
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
     <RelativeLayout
-        android:id="@+id/idRLContainer"
+        android:id="@+id/inventoryLayout"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        tools:visibility="visible">
 
         <EditText
             android:id="@+id/InventoryEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Enter item name to add in ist"
-            android:translationX="1130dp"
+            android:translationX="860dp"
             android:translationY="600dp"
-            android:visibility="gone"
-            tools:visibility="visible" />
+            android:visibility="visible"
+            tools:visibility="invisible" />
 
         <Button
             android:id="@+id/addButton"
@@ -351,10 +336,21 @@
             android:layout_height="wrap_content"
             android:text="ADD"
             android:textAllCaps="true"
-            android:translationX="1200dp"
+            android:translationX="840dp"
             android:translationY="650dp"
-            android:visibility="gone"
-            tools:visibility="visible" />
+            android:visibility="visible"
+            tools:visibility="invisible" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="138dp"
+            android:layout_height="122dp"
+            android:layout_marginStart="784dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="205dp"
+            android:text="Back"
+            android:translationX="950dp" />
 
         <Button
             android:id="@+id/removeButton"
@@ -363,8 +359,10 @@
             android:layout_marginStart="76dp"
             android:layout_marginTop="80dp"
             android:text="REMOVE"
-            android:visibility="gone"
-            tools:visibility="visible" />
+            android:translationX="980dp"
+            android:translationY="570dp"
+            android:visibility="visible"
+            tools:visibility="invisible" />
 
         <ListView
             android:id="@+id/inventoryListView"
@@ -372,8 +370,11 @@
             android:layout_height="486dp"
             android:layout_below="@id/InventoryEdit"
             android:translationX="750dp"
-            android:visibility="gone"
-            tools:visibility="visible" />
+            android:visibility="visible"
+            tools:visibility="invisible">
+
+        </ListView>
 
     </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
